@@ -34,12 +34,13 @@ namespace CoffeeShopRegistrationLab11._2.Controllers
         [HttpPost]
         public IActionResult RegistrationResponse(string firstname, string lastname, string email, int phonenumber, string password )
         {
-            if(password.Length < 8 )
+            //Commented out the if statement. Used validation in my form
+            //if(password.Length < 8 )
 
-            {
+            //{
 
-                return Content("Sorry, password must be at least 8 characters");
-            }
+            //    return Content("Sorry, password must be at least 8 characters");
+            //}
             ViewData["First Name"] = firstname;
             ViewData["Last Name"] = lastname;
             ViewData["Email"] = email;
