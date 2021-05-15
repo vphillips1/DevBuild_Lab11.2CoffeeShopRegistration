@@ -6,48 +6,109 @@
 <h3>Please fill the form to register! </h3>
 
 
-<div class="form">
 
-    <form action="/home/RegistrationResponse" method="post">
-        <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="firstname" required><br><br>
 
-        <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="phonenumber">Phone Number:</label>
-        <small>Format: 123-456-7890</small>
-        <input type="tel" id="phonenumber" name="phonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <br><br>
+<form method="post" action="/home/RegistrationResponse">
 
-        <div>
-            <b><h5>Type of Phone Number</h5></b>
+   
+    <fieldset>
+        <legend>Name</legend>
 
-            <input type="radio" name="phonetype" value="Mobile"> Mobile <br />
-            <input type="radio" name="phonetype" value="Work"> Work <br />
-            <input type="radio" name="phonetype" value="Home"> Home <br />
+        <div class="form-group">
+            FirstName: <input class="form-control" type="text" name="FirstName" placeholder="Enter your First Name" required /><br />
+
+        </div>
+
+        <div class="form-group">
+            LastName: <input class="form-control" type="text" name="LastName" placeholder="Enter your Last Name" required /><br />
 
 
         </div>
 
-        <label for="password">Password (8 characters minimum):</label>
-        <input type="password" id="password" name="password" minlength="8" required><br><br>
+        <div class="form-group">
+            UserName: <input class="form-control" type="text" name="UserName" placeholder="Enter your User Name" required /><br />
 
-        <div class="form2">
-            
 
-                <input type="submit" value="Register"> <br />
-                <input type="reset"> <br />
-
-            
 
         </div>
 
 
-    </form>
+
+    </fieldset>
+
     
 
-</div>
+    <fieldset>
+        <legend>Contact Information</legend>
+
+        <div class="form-group">
+            Email: <input class="form-control" type="email" name="Email" placeholder="Enter your email address" required /><br />
+
+        </div>
+
+        <div class="form-group">
+            EmailConfirmation: <input class="form-control" type="email" name="EmailConfirmation" placeholder="Please confirm your email" required /><br />
+
+        </div>
+
+
+        <div class="form-group">
+
+            <div class="form-group">
+                Age:<br /><small>You must be at least 18 years or older </small> <input class="form-control" type="number" name="Age" min="18" max="1000" placeholder="Enter your age" required /><br />
+
+            </div>
+
+            <label for="birthday">Birthday:</label>
+            <input class="form-control" type="date" id="birthday" name="birthday" required /><br />
+
+
+            PhoneNumber:<br /><small>Format: 123-456-7890</small><input class="form-control" type="tel" name="PhoneNumber" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+
+        </div>
+        <div>
+            <label>Type of Phone Number: </label>
+            <label class="form-check-inline">
+                <input type="checkbox" class="form-check-input">
+                Mobile
+            </label>
+            <label class="form-check-inline">
+                <input type="checkbox" class="form-check-input">
+                Work
+            </label>
+            <label class="form-check-inline">
+                <input type="checkbox" class="form-check-input">
+                Home
+            </label>
+        </div>
+
+
+    </fieldset>
+
+    
+    <fieldset>
+
+        <legend>Authentication</legend>
+        <div class="form-group">
+            Password: <input class="form-control" type="password" name="Password" placeholder="Enter your password" minlength="8" required /><br />
+
+        </div>
+        <div class="form-group">
+
+            PasswordConfirmation: <input class="form-control" type="password" name="PasswordConfirmation" placeholder="Confirm your password" minlength="8" required>
+
+        </div>
+
+
+    </fieldset>
+
+
+  
+    <button class="btn btn-dark">Register</button>
+
+</form>
+    
+
 
 
 
@@ -77,22 +138,19 @@
         }
 </style>
 
-<!--<form method="post" action="/home/RegistrationResponse">
+<style>
+    fieldset {
+        background-color: #eeeeee;
+    }
 
-    First Name: <input type="text" name="firstname" /><br />
+    legend {
+        background-color: gray;
+        color: burlywood;
+        padding: 5px 10px;
+    }
 
-    Last Name: <input type="text" name="lastname" /><br />
-
-    Email: <input type="email" name="email" /><br />
-
-    Phone Number: <input type="tel" name="phonenumber" /><br />
-
-    Password: <input type="password" name="password" /><br />
-
-    <input type="Submit" />
-
-
-</form>-->
-
-
+    input {
+        margin: 0px;
+    }
+</style>
 

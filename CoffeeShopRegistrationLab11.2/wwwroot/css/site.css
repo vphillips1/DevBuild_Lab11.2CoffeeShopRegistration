@@ -2,8 +2,8 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
+  white-space: pre-wrap;
+  text-align: left;
   word-break: break-all;
 }
 
@@ -19,9 +19,9 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #03c4d6;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
@@ -37,9 +37,11 @@ html {
 
 .border-top {
   border-top: 1px solid #e5e5e5;
+  color:antiquewhite;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+  color:antiquewhite;
 }
 
 .box-shadow {

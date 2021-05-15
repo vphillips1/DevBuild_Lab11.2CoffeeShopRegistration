@@ -1,10 +1,30 @@
-﻿
+﻿@model AddUser
 @{
     ViewData["Title"] = "RegistrationResponse";
 }
 
 
-<h3>Welcome! @ViewData["First Name"]</h3>
+<h3>Welcome! @Model.FirstName @Model.LastName</h3>
+
+<h4>Please see your submission below. Sensitive information such as your password has been omitted.</h4>
+<br />
+
+<b>
+    <p>First Name: @Model.FirstName</p>
+    <p>Last Name: @Model.LastName</p>
+    <p>User Name: @Model.UserName</p>
+    <p> Birthday: @Model.Birthday</p>
+    <p> Age: @Model.Age</p>
+    <p> Phone Number: @Model.PhoneNumber</p>
+    <p>Email: @Model.Email</p>
+
+
+
+</b>
+
+
+
+<img src="/images/coffeecupwelcome-2.jpg" />
 
 <body style="background-color: #5F9EA0;">
 

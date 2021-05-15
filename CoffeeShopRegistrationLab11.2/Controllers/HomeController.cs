@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CoffeeShopRegistrationLab11._2.Controllers
@@ -32,21 +33,32 @@ namespace CoffeeShopRegistrationLab11._2.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegistrationResponse(string firstname, string lastname, string email, int phonenumber, string password )
+      
+        public IActionResult RegistrationResponse(AddUser user )
         {
-            //Commented out the if statement. Used validation in my form
-            //if(password.Length < 8 )
+          
+            if(user.Password != user.PasswordConfirmation)
+            {
 
-            //{
+                return View("PasswordNotConfirmed");
+            }
+            else if(user.Email != user.EmailConfirmation)
+            {
 
-            //    return Content("Sorry, password must be at least 8 characters");
-            //}
-            ViewData["First Name"] = firstname;
-            ViewData["Last Name"] = lastname;
-            ViewData["Email"] = email;
-            ViewData["Phone Number"] = phonenumber;
-            ViewData["Password"] = password;
-            return View();
+                return View("EmailNotConfirmed");
+            }
+
+            Regex rx = new Regex(@"[0-9]+");
+
+            string goback = "click 'Back' to return to the registration form.";
+
+            if (rx.IsMatch(user.FirstName) || rx.IsMatch(user.LastName))
+            {
+
+                return Content($"Your name cannot contain any numbers. {goback}");
+            }
+
+            return View(user);
         }
        
         public IActionResult Privacy()
