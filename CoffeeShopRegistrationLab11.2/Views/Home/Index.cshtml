@@ -2,11 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+<a class="navbar-brand" href="/">
+    <div class="logo-image">
+        <img src="/images/coffeegiphy.gif" class="img-fluid">
+    </div>
+</a>
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to V's Coffee Shop</h1>
+    <h1 class="display-4">Welcome to V's Coffee Shop!</h1>
     <h2> <a href="/home/RegistrationForm">Register</a></h2>
+    <h2> <a href="/product/index">Menu</a></h2>
 
     <img src="/images/coffeeshopimage.jpg"/>
 </div>
@@ -20,9 +26,17 @@
 <style type="text/css">
     .text-center {
        font-family:'Bodoni MT';
+       color:darkkhaki;
+       font-size: 50px;
     }
 
 
-
+    .logo-image {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: -6px;
+    }
        
 </style>

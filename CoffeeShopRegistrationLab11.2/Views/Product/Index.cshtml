@@ -1,0 +1,54 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Coffee Menu</h1>
+<h4>What would you like?</h4>
+<h6>We have a variety of coffee, teas, and sandwiches and a few bakery items</h6>
+
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+
+            <th>Name</th>
+
+            <th>Price</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Product product in Model)
+        {
+
+
+            <tr>
+
+
+                <td>
+                    <a href="/product/detail/@product.id"> @product.name @*$@product.price*@</a><br />
+                </td>
+
+                <td>
+                     $@product.price
+
+                </td>
+
+            </tr>
+
+
+
+
+
+        }
+
+    </tbody>
+
+    <body style=" background-color: #5F9EA0;">
+
+
+    </body>

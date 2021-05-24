@@ -1,0 +1,42 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Product Details</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+       
+
+          
+        <tr>
+            
+            <td>@Model.id</td>
+            <td>@Model.name</td>
+            <td>@Model.description</td>
+            <td>$@Model.price</td>
+            <td>@Model.category</td>
+           
+
+        </tr>
+
+           
+        </tbody>
+
+
+    <body style=" background-color: #5F9EA0;">
+
+
+    </body>
