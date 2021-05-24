@@ -1,0 +1,13 @@
+﻿@model int
+@{
+    ViewData["Title"] = "DeleteForm";
+}
+
+
+<h1>Delete: Are you sure? </h1>
+You are aboout to delete ID Number @Model. Are you sure ?
+
+<a href="/admin/index"> No! Cancel!!!</a>
+<br />
+<a href="/admin/delete/@Model">Yes! Delete!</a>
+

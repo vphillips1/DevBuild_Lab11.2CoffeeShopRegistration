@@ -15,66 +15,18 @@ namespace CoffeeShopRegistrationLab11._2.Controllers
         MySqlConnection db = new MySqlConnection("Server=localhost;Database=Coffeeshop;Uid=root;Password=abc727");
         public IActionResult Index()
         {
-          
+
             List<Product> products = db.GetAll<Product>().ToList();
             return View(products);
         }
 
         public IActionResult Detail(int id)
         {
-          
+
             Product products = db.Get<Product>(id);
             return View(products);
         }
 
-        public IActionResult EditForm(int id)
-
-        {
-            Product prod = db.Get<Product>(id);
-            return View(prod);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Product prod)
-        {
-
-            db.Update(prod);
-
-            return RedirectToAction("Index");
-        }
-
-
-        public IActionResult DeleteProduct()
-        {
-
-            return View();
-        }
-
-        public IActionResult Delete(int id)
-        {
-            Product prod = db.Get<Product>(id);
-
-            db.Delete(prod);
-
-            return RedirectToAction("Index");
-        }
-
-
-        public IActionResult AddForm()
-        {
-
-            return View();
-        }
-
-
-        [HttpPost]
-        public IActionResult Add(Product prod)
-        {
-
-            db.Insert(prod);
-
-            return RedirectToAction( "Index");
-        }
 
     }
 }

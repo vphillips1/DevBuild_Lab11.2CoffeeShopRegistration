@@ -28,72 +28,65 @@ namespace CoffeeShopRegistrationLab11._2.Controllers
             return View(prod);
         }
 
-        public IActionResult AdminForm(AdminLogin admin)
-        {
-            
-            return View(admin);
+       
+        public IActionResult EditForm(int id)
 
-            
+        {
+            Product prod = db.Get<Product>(id);
+            return View(prod);
         }
 
-        //public IActionResult EditForm (int id)
+        [HttpPost]
+        public IActionResult Edit(Product prod)
+        {
 
-        //{
-        //    Product prod = db.Get<Product>(id);
-        //    return View(prod);
-        //}
+            db.Update(prod);
 
-        //[HttpPost]
-        //public IActionResult Edit (Product prod)
-        //{
-
-        //    db.Update(prod);
-
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
 
 
-        //public IActionResult DeleteProduct()
-        //{
+        public IActionResult DeleteForm(int id)
+        {
 
-        //    return View();
-        //}
+            return View(id);
+        }
 
-        //public IActionResult Delete(int id)
-        //{
-        //   Product prod = db.Get<Product>(id);
+        public IActionResult Delete(int id)
+        {
+            Product prod = db.Get<Product>(id);
 
-        //   db.Delete(prod);
+            db.Delete<Product>(prod);
 
-        //    return RedirectToAction("Index");
-        //}
-          
-
-        //public IActionResult AddForm()
-        //{
-
-        //    return View();
-        //}
+            return RedirectToAction("Index");
+        }
 
 
-        //[HttpPost]
-        //public IActionResult Add(Product prod)
-        //{
+        public IActionResult AddForm()
+        {
 
-        //    db.Insert(prod);
-
-        //    return RedirectToAction("Index");
-        //}
+            return View();
+        }
 
 
-               
+        [HttpPost]
+        public IActionResult Add(Product prod)
+        {
+
+            db.Insert(prod);
+
+            return RedirectToAction("Index");
+        }
+
+
+
 
     }
 
 
 
 
-        
+
 
 
 
